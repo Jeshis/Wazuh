@@ -169,7 +169,7 @@ You can config one master node and others as workers node.
 1. Edit the /usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml file and replace the url or dns   
 ![image](https://github.com/user-attachments/assets/42cdbe66-4937-499e-8fff-8b2f1b6a806c)
 2. Now access dashboard from web browser  
-* Https://localhost
+* https://localhost
 * user: admin
 * password: admin
 
