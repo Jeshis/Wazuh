@@ -114,6 +114,17 @@ Now, move files in relevant location.
   - chmod 400 /etc/filebeat/certs/*  
   - chown -R root:root /etc/filebeat/certs  
 
+## Configuring the Wazuh indexer connection  
+1. Save the Wazuh indexer username and password [default (admin:admin)] into the Wazuh manager keystore  
+  - echo '<INDEXER_USERNAME>' | /var/ossec/bin/wazuh-keystore -f indexer -k username  
+  - echo '<INDEXER_PASSWORD>' | /var/ossec/bin/wazuh-keystore -f indexer -k password  
+
+2. Edit /var/ossec/etc/ossec.conf to configure the indexer connection.
+   Replace with 0.0.0.0 Wazuh indexer node IP address
+   ![image](https://github.com/user-attachments/assets/7ad1fbd5-f0ef-4b00-a11d-6a2a40471fe1)  
+
+# Starting the Wazuh manager  
+
 
 
 
