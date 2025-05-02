@@ -2,14 +2,14 @@
 open source security application that unifies Extended Detection & Response and SIEM capablities. 
 
 # Installing Wazuh in Ubuntu server.
-Installation workflow:  
+## Installation workflow:  
 * wazuh-indexer : Scalable full-text search and analytics engine that indexes and stores alerts from the Wazuh server.  
 * wazuh-manager : Processes agent data using decoders, rules, and threat intelligence to detect IOCs; supports remote agent management and scales horizontally in clustered setups.  
 * wazuh-dashboard : web user interface for data visualization and analysis  
 After wazuh installation, agents are peered through wazuh-agents - that sends logs from endpoints.  
 
-#Wazuh-indexer installation:
-*Certificate Creation
+# Wazuh-indexer installation:  
+## Certificate Creation
 1. Generating SSL certificates  
 curl -sO https://packages.wazuh.com/4.11/wazuh-certs-tool.sh  
 curl -sO https://packages.wazuh.com/4.11/config.yml  
@@ -24,7 +24,7 @@ bash ./wazuh-certs-tool.sh -A
 tar -cvf ./wazuh-certificates.tar -C ./wazuh-certificates/ .  
 rm -rf ./wazuh-certificates  
 
-*Nodes Installation  
+## Nodes Installation  
 + Installing package dependencies   
 apt-get install debconf adduser procps
 + Adding the Wazuh repository
