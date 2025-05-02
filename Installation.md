@@ -74,6 +74,27 @@ to load to load the new certificates information and start the single-node or mu
 ### Testing the cluster installation  
 ![image](https://github.com/user-attachments/assets/6bd51cf3-23b9-47b6-8e61-03f6fee9009e)  
 
+# Installing Wazuh server  
+Two stages: 1. Wazuh server node installation  2. Cluster configuration for multi-node deployment  
+## 1. Wazuh Server node installation  
+If you have already configured and enabled Wazuh repository, then you do not need to add again. You can directly install  server node.  
+- apt-get -y install wazuh-manager  
+
+* Installing Filebeat package (ightweight data shipper designed to securely forward alerts and archived events processed)
+  - curl -O https://packages.wazuh.com/4.x/apt/pool/main/f/filebeat/filebeat-oss-7.10.2-amd64.deb  
+  - apt-get install ./filebeat-oss-7.10.2-amd64.deb  
+
+1. Configuring Filebeat
+  - curl -so /etc/filebeat/filebeat.yml https://packages.wazuh.com/4.11/tpl/wazuh/filebeat/filebeat.yml  
+2. Edit the /etc/filebeat/filebeat.yml configuration file with localhost.  
+![image](https://github.com/user-attachments/assets/51585b4b-a77e-4d7b-8625-50343b56ee04)
+3. Create a Filebeat keystore to securely store authentication credentials.
+  - filebeat keystore create  
+4. Add the default username and password to the secrets keystore.(admin:admin)  
+  - echo admin | filebeat keystore add username --stdin --force  
+  - echo admin | filebeat keystore add password --stdin --force
+
+
 
 
    
