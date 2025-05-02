@@ -101,6 +101,16 @@ If you have already configured and enabled Wazuh repository, then you do not nee
 
 ## Deploying Certificates 
 Note: Check whether ![image](https://github.com/user-attachments/assets/22c8f2f0-50e5-480b-b3ac-ff1f97a472a2) is available or not in the system.  
+1. Replace <SERVER_NODE_NAME> with Wazuh server node certificate name, i.e used in config.yml when creating the certificates  
+  - NODE_NAME=<SERVER_NODE_NAME>  
+Now, move files in relevant location.
+  -  mkdir /etc/filebeat/certs  
+  - tar -xf ./wazuh-certificates.tar -C /etc/filebeat/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem  
+  - mv -n /etc/filebeat/certs/$NODE_NAME.pem /etc/filebeat/certs/filebeat.pem  
+  - mv -n /etc/filebeat/certs/$NODE_NAME-key.pem /etc/filebeat/certs/filebeat-key.pem  
+  - chmod 500 /etc/filebeat/certs  
+  - chmod 400 /etc/filebeat/certs/*  
+  - chown -R root:root /etc/filebeat/certs  
 
 
 
