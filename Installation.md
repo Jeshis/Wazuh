@@ -35,7 +35,7 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
 
 ## Installing the Wazuh indexer  
 * Install Wazuh indexer package.  
- - apt-get -y install wazuh-indexer  
+  + apt-get -y install wazuh-indexer  
 * Configuring Wazuh indexer   
 1. Edit /etc/wazuh-indexer/opensearch.yml file and replace:
    - network.host : Use the same node address set in config.yml to create the SSL certificates.
