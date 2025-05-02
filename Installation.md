@@ -92,8 +92,14 @@ If you have already configured and enabled Wazuh repository, then you do not nee
   - filebeat keystore create  
 4. Add the default username and password to the secrets keystore.(admin:admin)  
   - echo admin | filebeat keystore add username --stdin --force  
-  - echo admin | filebeat keystore add password --stdin --force
+  - echo admin | filebeat keystore add password --stdin --force  
+5. Download the alerts template for the Wazuh indexer.
+  - curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v4.11.2/extensions/elasticsearch/7.x/wazuh-template.json  
+  - chmod go+r /etc/filebeat/wazuh-template.json  
+6. Install the Wazuh module for Filebeat.
+  - curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.4.tar.gz | tar -xvz -C /usr/share/filebeat/module  
 
+## Deploying Certificates 
 
 
 
