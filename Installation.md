@@ -158,10 +158,22 @@ You can config one master node and others as workers node.
    - mv -n /etc/wazuh-dashboard/certs/$NODE_NAME.pem /etc/wazuh-dashboard/certs/dashboard.pem  
    - mv -n /etc/wazuh-dashboard/certs/$NODE_NAME-key.pem /etc/wazuh-dashboard/certs/dashboard-key.pem  
    - chmod 500 /etc/wazuh-dashboard/certs  
-   - chmod 400 /etc/wazuh-dashboard/certs/*  
-   - chown -R wazuh-dashboard:wazuh-dashboard /etc/wazuh-dashboard/certs
+   - chmod 400 /etc/wazuh-dashboard/certs/*   
+   - chown -R wazuh-dashboard:wazuh-dashboard /etc/wazuh-dashboard/certs  
 
- 
+ ## Starting the Wazuh dashboard service  
+   - systemctl daemon-reload  
+   - systemctl enable wazuh-dashboard  
+   - systemctl start wazuh-dashboard
+
+1. Edit the /usr/share/wazuh-dashboard/data/wazuh/config/wazuh.yml file and replace the url or dns   
+![image](https://github.com/user-attachments/assets/42cdbe66-4937-499e-8fff-8b2f1b6a806c)
+2. Now access dashboard from web browser  
+* Https://localhost
+* user: admin
+* password: admin
+
+
 
 
 
