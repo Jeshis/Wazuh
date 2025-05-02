@@ -37,7 +37,7 @@ apt-get update
 * Install Wazuh indexer package.  
 apt-get -y install wazuh-indexer  
 * Configuring Wazuh indexer   
- Edit /etc/wazuh-indexer/opensearch.yml file and replace:
+1. Edit /etc/wazuh-indexer/opensearch.yml file and replace:
    - network.host : Use the same node address set in config.yml to create the SSL certificates.
    - node.name: node as defined in the config.yml file.
    - cluster.initial_master_nodes :
@@ -45,4 +45,15 @@ apt-get -y install wazuh-indexer
    - plugins.security.nodes_dn:
    - ![image](https://github.com/user-attachments/assets/d34a5f91-5d4f-4090-b51f-fda665054160)
 
-
+* Deploying certificates
+  Check wazuh-certificates.tar file  
+1. Run commands replacing <INDEXER_NODE_NAME> with the name of the Wazuh indexer node you are configuring as defined in config.yml.
+   NODE_NAME=<INDEXER_NODE_NAME>
+   mkdir /etc/wazuh-indexer/certs  
+   tar -xf ./wazuh-certificates.tar -C /etc/wazuh-indexer/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./admin.pem ./admin-key.pem ./root-ca.pem  
+   mv -n /etc/wazuh-indexer/certs/$NODE_NAME.pem /etc/wazuh-indexer/certs/indexer.pem  
+   mv -n /etc/wazuh-indexer/certs/$NODE_NAME-key.pem /etc/wazuh-indexer/certs/indexer-key.pem  
+   chmod 500 /etc/wazuh-indexer/certs  
+   chmod 400 /etc/wazuh-indexer/certs/*  
+   chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs
+   
