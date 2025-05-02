@@ -55,6 +55,8 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
    - mv -n /etc/wazuh-indexer/certs/$NODE_NAME-key.pem /etc/wazuh-indexer/certs/indexer-key.pem  
    - chmod 500 /etc/wazuh-indexer/certs  
    - chmod 400 /etc/wazuh-indexer/certs/*  
-   - chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs
-
+   - chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs  
+### NOTE:
+ If no other Wazuh components are going to be installed on this node, remove the wazuh-certificates.tar file by running rm -f ./wazuh-certificates.tar to increase security.
+ 
    
