@@ -63,4 +63,11 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
 * systemctl enable wazuh-indexer  
 * systemctl start wazuh-indexer
 
+### NOTE:
+Disable Wazuh Updates
+  - sed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.list  
+  - apt update
+
+
+
    
