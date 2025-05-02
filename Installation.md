@@ -58,5 +58,9 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
    - chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs  
 ### NOTE:
  If no other Wazuh components are going to be installed on this node, remove the wazuh-certificates.tar file by running rm -f ./wazuh-certificates.tar to increase security.
- 
+##  Starting the service
+* systemctl daemon-reload  
+* systemctl enable wazuh-indexer  
+* systemctl start wazuh-indexer
+
    
