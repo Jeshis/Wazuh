@@ -27,7 +27,7 @@ rm -rf ./wazuh-certificates
 ## Nodes Installation  
 + Installing package dependencies   
 apt-get install debconf adduser procps
-+ Adding the Wazuh repository
++ Adding the Wazuh repository  
 apt-get install gnupg apt-transport-https
 1. Install the GPG key.  
 curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
