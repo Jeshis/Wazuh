@@ -37,7 +37,7 @@ apt-get update
 * Install Wazuh indexer package.  
 apt-get -y install wazuh-indexer  
 * Configuring Wazuh indexer   
-1. Edit /etc/wazuh-indexer/opensearch.yml file and replace:
+ Edit /etc/wazuh-indexer/opensearch.yml file and replace:
    - network.host : Use the same node address set in config.yml to create the SSL certificates.
    - node.name: node as defined in the config.yml file.
    - cluster.initial_master_nodes :
