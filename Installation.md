@@ -100,6 +100,8 @@ If you have already configured and enabled Wazuh repository, then you do not nee
   - curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.4.tar.gz | tar -xvz -C /usr/share/filebeat/module  
 
 ## Deploying Certificates 
+Note: Check whether ![image](https://github.com/user-attachments/assets/22c8f2f0-50e5-480b-b3ac-ff1f97a472a2) is available or not in the system.  
+
 
 
 
