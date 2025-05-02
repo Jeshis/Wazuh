@@ -124,6 +124,50 @@ Now, move files in relevant location.
    ![image](https://github.com/user-attachments/assets/7ad1fbd5-f0ef-4b00-a11d-6a2a40471fe1)  
 
 # Starting the Wazuh manager  
+1. Enable and start wazuh-manager service  
+   - systemctl daemon-reload  
+   - systemctl enable wazuh-manager  
+   - systemctl start wazuh-manager  
+![image](https://github.com/user-attachments/assets/f306b4e8-9d1d-42c3-ad47-fa228bce80e5)
+
+2. Start Filebeat service
+   - systemctl daemon-reload  
+   - systemctl enable filebeat  
+   - systemctl start filebeat  
+![image](https://github.com/user-attachments/assets/a847ea3a-be9e-422c-8a77-6f99471fe2c6)
+
+## 2. Cluster configuration for multi-node deployment  
+You can config one master node and others as workers node.  
+* Edit /var/ossec/etc/ossec.conf file for node config  
+
+# Wazuh dashboard installation  
+![image](https://github.com/user-attachments/assets/10925b75-81d7-41c5-8d7b-0cb2928ab600)  
+## Installing the Wazuh dashboard  
+* apt-get -y install wazuh-dashboard  
+
+### Configuring the Wazuh dashboard  
+1. Edit the /etc/wazuh-dashboard/opensearch_dashboards.yml file
+   - server.host: specifies the host of the Wazuh dashboard server. To allow remote users to connect, set IP address or DNS name of the Wazuh dashboard server.
+   - opensearch.hosts: URLs of the Wazuh indexer instances to use for all queries. Dashboard can be configured to connect to multiple Wazuh indexer nodes in the same cluster. Addresses are seperated by , (commas)  
+
+ ### Deploying certificates  
+   - NODE_NAME=<DASHBOARD_NODE_NAME>  
+* Move certificates
+   - mkdir /etc/wazuh-dashboard/certs  
+   - tar -xf ./wazuh-certificates.tar -C /etc/wazuh-dashboard/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem  
+   - mv -n /etc/wazuh-dashboard/certs/$NODE_NAME.pem /etc/wazuh-dashboard/certs/dashboard.pem  
+   - mv -n /etc/wazuh-dashboard/certs/$NODE_NAME-key.pem /etc/wazuh-dashboard/certs/dashboard-key.pem  
+   - chmod 500 /etc/wazuh-dashboard/certs  
+   - chmod 400 /etc/wazuh-dashboard/certs/*  
+   - chown -R wazuh-dashboard:wazuh-dashboard /etc/wazuh-dashboard/certs
+
+ 
+
+
+
+
+
+ 
 
 
 
