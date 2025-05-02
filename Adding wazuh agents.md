@@ -19,9 +19,15 @@
 * From GUI  
   Home>Endpoints>Deploy a new agent  
   select machine, Fill server IP, Name Agent  
-![image](https://github.com/user-attachments/assets/8566094f-806e-45b0-8367-3e3a3adbb960)  
-![image](https://github.com/user-attachments/assets/8ec2e44a-4a28-407d-af64-27f5dd1ed94d)  
+![image](https://github.com/user-attachments/assets/8566094f-806e-45b0-8367-3e3a3adbb960)
+![image](https://github.com/user-attachments/assets/28c2a74c-10c4-4702-85d1-4bf1d8cb7358)  
 ![image](https://github.com/user-attachments/assets/7bab303e-30e0-4f93-a190-a44d1f0595a2)
+
+## Adding wazuh agent in Windows   
+Using Powershell  
+* .\wazuh-agent-4.11.2-1.msi /q WAZUH_MANAGER="10.0.0.2"  
+*  NET START Wazuh  
+Agents files are stored in C:\Program Files (x86)\ossec-agent   
 
 
  
