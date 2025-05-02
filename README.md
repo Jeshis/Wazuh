@@ -8,4 +8,10 @@ Installation workflow:
 3- wazuh-dashboard : web user interface for data visualization and analysis  
 After wazuh installation, agents are peered through wazuh-agents - that sends logs from endpoints.  
 
-![1295780](https://github.com/user-attachments/assets/6e294c33-258a-40c9-98f0-87070c719b24)
+#Wazuh-indexer installation:
+*Certificate Creation
+1. Generating SSL certificates  
+curl -sO https://packages.wazuh.com/4.11/wazuh-certs-tool.sh  
+curl -sO https://packages.wazuh.com/4.11/config.yml  
+2. Edit ./config.yml and replace the node names and IP values
+![image](https://github.com/user-attachments/assets/5ebf72f0-a1d1-4058-acbb-1629c4089c7c)
