@@ -7,3 +7,5 @@ Installation workflow:
 2- wazuh-manager : Processes agent data using decoders, rules, and threat intelligence to detect IOCs; supports remote agent management and scales horizontally in clustered setups.  
 3- wazuh-dashboard : web user interface for data visualization and analysis  
 After wazuh installation, agents are peered through wazuh-agents - that sends logs from endpoints.  
+
+![1295780](https://github.com/user-attachments/assets/6e294c33-258a-40c9-98f0-87070c719b24)
