@@ -72,7 +72,8 @@ Disable Wazuh Updates
   - /usr/share/wazuh-indexer/bin/indexer-security-init.sh
 to load to load the new certificates information and start the single-node or multi-node cluster.
 ### Testing the cluster installation  
-![image](https://github.com/user-attachments/assets/35e16704-db13-4424-9c22-ae77cb01fe5d)  
+![image](https://github.com/user-attachments/assets/6bd51cf3-23b9-47b6-8e61-03f6fee9009e)  
+
 
 
    
