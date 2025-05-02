@@ -15,3 +15,4 @@ curl -sO https://packages.wazuh.com/4.11/wazuh-certs-tool.sh
 curl -sO https://packages.wazuh.com/4.11/config.yml  
 2. Edit ./config.yml and replace the node names and IP values
 ![image](https://github.com/user-attachments/assets/5ebf72f0-a1d1-4058-acbb-1629c4089c7c)
+
