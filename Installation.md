@@ -42,8 +42,8 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
    - node.name: node as defined in the config.yml file.
    - cluster.initial_master_nodes :
    - discovery.seed_hosts:
-   - plugins.security.nodes_dn:
-   - ![image](https://github.com/user-attachments/assets/d34a5f91-5d4f-4090-b51f-fda665054160)
+   - plugins.security.nodes_dn:  
+   - ![image](https://github.com/user-attachments/assets/6c63b375-2941-43df-a830-8fdfafdc8f56)  
 
 * Deploying certificates
   - Check wazuh-certificates.tar file  
@@ -66,8 +66,13 @@ After wazuh installation, agents are peered through wazuh-agents - that sends lo
 ### NOTE:
 Disable Wazuh Updates
   - sed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.list  
-  - apt update
+  - apt update  
 
+## Cluster Initialization  
+  - /usr/share/wazuh-indexer/bin/indexer-security-init.sh
+to load to load the new certificates information and start the single-node or multi-node cluster.
+### Testing the cluster installation  
+![image](https://github.com/user-attachments/assets/35e16704-db13-4424-9c22-ae77cb01fe5d)  
 
 
    
