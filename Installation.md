@@ -32,3 +32,17 @@ curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring 
 echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
 3. Update packages  
 apt-get update  
+
+## Installing the Wazuh indexer  
+* Install Wazuh indexer package.  
+apt-get -y install wazuh-indexer  
+* Configuring Wazuh indexer   
+1. Edit /etc/wazuh-indexer/opensearch.yml file and replace:
+   - network.host : Use the same node address set in config.yml to create the SSL certificates.
+   - node.name: node as defined in the config.yml file.
+   - cluster.initial_master_nodes :
+   - discovery.seed_hosts:
+   - plugins.security.nodes_dn:
+   - ![image](https://github.com/user-attachments/assets/d34a5f91-5d4f-4090-b51f-fda665054160)
+
+
