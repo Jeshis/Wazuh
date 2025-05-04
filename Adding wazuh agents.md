@@ -37,6 +37,17 @@ using GUI
 You can check whether agent is active or not from Windows Task Manager.  
 ![image](https://github.com/user-attachments/assets/6963b08e-8b61-4cc0-a9e7-4659f42e0b78)  
 
+## Adding wazuh agent in MacOS
+### For intel based
+From CLI
+- curl -so wazuh-agent.pkg https://packages.wazuh.com/4.x/macos/wazuh-agent-4.11.2-1.intel64.pkg && echo "WAZUH_MANAGER='Server_IP' && WAZUH_AGENT_NAME='mac_intel'" > /tmp/wazuh_envs && sudo installer -pkg ./wazuh-agent.pkg -target /
+- sudo /Library/Ossec/bin/wazuh-control start  
+
+All files are stored in /Library/Ossec/  
+
+From GUI  
+You can download from this link for intel based architecture  
+https://packages.wazuh.com/4.x/macos/wazuh-agent-4.11.2-1.intel64.pkg  
 
  
 
