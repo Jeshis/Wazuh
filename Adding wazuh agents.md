@@ -24,9 +24,9 @@
 ![image](https://github.com/user-attachments/assets/7bab303e-30e0-4f93-a190-a44d1f0595a2)
 
 ## Adding wazuh agent in Windows   
-Using Powershell  
-* .\wazuh-agent-4.11.2-1.msi /q WAZUH_MANAGER="10.0.0.2"  
-*  NET START Wazuh  
+Using Powershell (adminstrator privilege)  
+* Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.11.2-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER='Server_IP' WAZUH_AGENT_NAME='Windows'   
+*  NET START WazuhSvc    
 Agents files are stored in C:\Program Files (x86)\ossec-agent   
 
 using GUI
