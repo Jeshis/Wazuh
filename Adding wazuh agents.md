@@ -10,11 +10,15 @@
   - curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg  
   - echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list  
   - apt-get update  
+IMport GCP key     
+apt-get install gnupg apt-transport-https  
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | apt-key add -  
+echo "deb https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list  
 - Deploy agent  
-  - WAZUH_MANAGER="10.0.0.2" apt-get install wazuh-agent  (server IP)
-  - systemctl daemon-reload  
-  - systemctl enable wazuh-agent
-  - systemctl start wazuh-agent (this will start agent everytime systems runs)
+  - WAZUH_MANAGER="10.0.0.2" apt-get install wazuh-agent  (server IP)  
+  - systemctl daemon-reload   
+  - systemctl enable wazuh-agent   
+  - systemctl start wazuh-agent (this will start agent everytime systems runs)  
 
 * From GUI  
   Home>Endpoints>Deploy a new agent  
