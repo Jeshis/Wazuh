@@ -31,7 +31,7 @@ Agents files are stored in C:\Program Files (x86)\ossec-agent
 
 using GUI
 - You just need to run windows-agent.msi and fill manager ip & authentication key if required.  
--You can find the package in below offical wazuh link.  
+- You can find the package in below offical wazuh link.  
 - https://packages.wazuh.com/4.x/windows/wazuh-agent-4.11.2-1.msi  
 
 You can check whether agent is active or not from Windows Task Manager.  
