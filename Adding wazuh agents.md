@@ -49,6 +49,16 @@ From GUI
 You can download from this link for intel based architecture  
 https://packages.wazuh.com/4.x/macos/wazuh-agent-4.11.2-1.intel64.pkg  
 
+### For Apple silicon based  
+From CLI  
+- curl -so wazuh-agent.pkg https://packages.wazuh.com/4.x/macos/wazuh-agent-4.11.2-1.arm64.pkg && echo "WAZUH_MANAGER='172.16.210.218' && WAZUH_AGENT_NAME='mac-silicon'" > /tmp/wazuh_envs && sudo installer -pkg ./wazuh-agent.pkg -target /
+- sudo /Library/Ossec/bin/wazuh-control start
+
+From GUI  
+You can download from this link for apple silicon based architecture   
+https://packages.wazuh.com/4.x/macos/wazuh-agent-4.11.2-1.arm64.pkg  
+
+
  
 
 
